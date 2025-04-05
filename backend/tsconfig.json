@@ -1,0 +1,24 @@
+{
+  "extends": "@tsconfig/node23/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2015",        // Or "ES6" or higher
+    "lib": ["es2015", "DOM"],  // Ensure ES2015 is included here
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
