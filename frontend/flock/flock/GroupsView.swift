@@ -29,7 +29,8 @@ struct SearchResultsView: View {
     var body: some View {
         VStack{
             
-            Spacer().frame(height: 10)
+            Spacer()
+                .frame(height: 30)
             Text("Search Results")
                 .fontWeight(.bold)
                 .font(.system(size: 20))
