@@ -18,8 +18,10 @@ struct Activity: Identifiable {
 struct ProfileView: View {
     // Example activity log data
     let activities = [
+        Activity(title: "Snowboarding", date: "April 4, 2025", description: "Hitting the slopes with friends in Whistler Blackcomb!"),
         Activity(title: "Camping", date: "April 1, 2025", description: "A weekend camping trip in Garibaldi Provincial Park."),
-        Activity(title: "Bouldering", date: "March 28, 2025", description: "A fun bouldering session at the local climbing gym."),
+        Activity(title: "Bouldering", date: "March 28, 2025", description: "A fun bouldering session at Hive North Vancouver with Maxine."),
+        Activity(title: "Hiking", date: "March 15, 2025", description: "A scenic hike up Grouse Mountain with friends."),
         Activity(title: "Hiking", date: "March 15, 2025", description: "A scenic hike up Grouse Mountain with friends.")
     ]
     
@@ -107,6 +109,8 @@ struct ProfileView: View {
                             .font(.headline)
                             .fontWeight(.bold)
                             .padding(.top)
+                        Divider()
+                        
                         
                         // Loop through each activity
                         ForEach(activities) { activity in
@@ -114,6 +118,7 @@ struct ProfileView: View {
                                 Text(activity.title)
                                     .font(.title3)
                                     .fontWeight(.bold)
+                                    .foregroundColor(.purple)
                                 
                                 Text(activity.date)
                                     .font(.subheadline)
