@@ -1,7 +1,12 @@
 import User from "../model/User";
+import UserManager from "../model/UserManager";
 
 export default class Flock {
+    private userManager: UserManager;
 
+    constructor() {
+        this.userManager = new UserManager();
+    }
     /**
      * Add a user to FLockApp
      *
@@ -20,7 +25,7 @@ export default class Flock {
      * it only contains whitespace.
      */
     public async addUser(username: string, password: string): Promise<User> {
-       throw new Error("TODO");
+       return await this.userManager.addUser(username, password);
     }
 
 
@@ -38,7 +43,7 @@ export default class Flock {
      * The promise should reject with an error if a user with the given username is not found.
      */
     public async updateUserProfile(username: string, name: string, bio: string): Promise<User> {
-        throw new Error("TODO");
+        return await this.userManager.updateUserProfile(username, name, bio);
     }
 
     /**
