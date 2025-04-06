@@ -25,16 +25,24 @@ struct Group: Identifiable {
 
 struct SearchResultsView: View {
     var groups: [Group]
-
+    
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                ForEach(groups) { group in
-                    GroupRow(group: group)
-                    Divider()
+        VStack{
+            
+            Spacer().frame(height: 10)
+            Text("Search Results")
+                .fontWeight(.bold)
+                .font(.system(size: 20))
+                .font(.headline)
+                .foregroundColor(.purple)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    ForEach(groups) { group in
+                        GroupRow(group: group)
+                        Divider()
+                    }
                 }
             }
-            .padding()
         }
     }
 }
@@ -43,7 +51,7 @@ struct GroupRow: View {
     var group: Group
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 50) {
             HStack {
                 Image(group.imageName)  // Displaying an image
                     .resizable()
