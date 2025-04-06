@@ -1,9 +1,19 @@
 
 export default class User {
+    public username: string;
+    public password: string;
+    public name: string;
+    public bio: string;
+
     constructor(
-        public username: string,
-        public password: string,
-        public name: string,
-        public bio: string
-    ) {}
+        username: string,
+        password: string,
+        name: string,
+        bio: string
+    ) {
+        this.username = username;
+        this.password = password;
+        this.name     = name;
+        this.bio      = bio;
+    }
 }

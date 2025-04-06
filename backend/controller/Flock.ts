@@ -1,5 +1,5 @@
-import User from "../model/User";
-import UserManager from "../model/UserManager";
+import User from "../model/User.ts";
+import UserManager from "../model/UserManager.ts";
 
 export default class Flock {
     private userManager: UserManager;
@@ -65,6 +65,14 @@ export default class Flock {
      * The promise should reject if a user with the given username does not exist
      */
     public async getUser(username: string): Promise<User> {
-        throw new Error("TODO");
+        return await this.userManager.getUser(username);
+    }
+
+    public async authenticateUser(username: string, password: string): Promise<Boolean> {
+        return await this.userManager.authenticateUser(username, password);
+    }
+
+    public async getUsers(): Promise<User[]> {
+        return await this.userManager.getUsers();
     }
 }
