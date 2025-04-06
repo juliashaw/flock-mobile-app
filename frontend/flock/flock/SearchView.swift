@@ -9,44 +9,15 @@ import SwiftUI
 
 struct SearchView: View {
     var body: some View {
-        
-        @State var search = ""
-        
-        VStack {
-            Text("Search")
-                .font(.system(size: 25, weight: .bold))
-                .frame(alignment: .topLeading)
-                .padding(.top, 20)
-            
-            Spacer()
-            
-            HStack {
-                Button("Friends") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+        NavigationView{
+            ScrollView{
+                VStack{
+                    Image("profile")
+                        .resizable()
+                        . aspectRatio(contentMode: .fit)
                 }
-                .foregroundColor(.black)
-                .padding(.horizontal, 50)
-                .font(.system(size: 20))
-
-                
-                Button("Groups") {
-                    
-                }
-                .foregroundColor(.black)
-                .padding(.horizontal, 50)
-                .font(.system(size: 20))
             }
-            
-            TextField("Search...", text: $search)
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(20)
-                            .foregroundColor(.black)
-                            .frame(width: 350)
-                            .padding(.vertical, 10)
-           
         }
-        
     }
 }
 
