@@ -65,6 +65,7 @@ export default class Flock {
      * The promise should reject if a user with the given username does not exist
      */
     public async getUser(username: string): Promise<User> {
-        throw new Error("TODO");
-    }
+        return await this.userManager.getUser(username);
+      }
 }
+
